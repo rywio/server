@@ -10,7 +10,7 @@ const io = socketIO(server)
 io.on('connection', socket => {
   console.log('User connected')
 
-  socket.emit("connection", "Hello")
+  setInterval(() => socket.emit("connection", new Date()), 1000)
   
   socket.on('disconnect', () => {
     console.log('user disconnected')
